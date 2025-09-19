@@ -1,28 +1,101 @@
 {
-    "name": "next-netlify-platform-starter",
-    "version": "0.1.0",
+    "name": "hci-forms-platform",
+    "version": "1.0.0",
     "private": true,
+    "description": "Multi-agent AI system for North Carolina HCI-CDS program management",
+    "keywords": ["hci-cds", "north-carolina", "healthcare", "ai-agents", "forms", "arms-integration"],
+    "author": "HCI-Forms Development Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gcrispin59/next-platform-HCI.git"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "lint:fix": "next lint --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "jest",
+        "test:unit": "jest --testPathPattern=tests/unit",
+        "test:integration": "jest --testPathPattern=tests/integration",
+        "test:e2e": "playwright test",
+        "test:coverage": "jest --coverage",
+        "test:watch": "jest --watch",
+        "test:smoke": "jest --testPathPattern=tests/smoke",
+        "db:migrate": "psql $DATABASE_URL -f database/schema.sql",
+        "db:seed": "psql $DATABASE_URL -f database/test-data.sql",
+        "db:reset": "npm run db:migrate && npm run db:seed",
+        "netlify:dev": "netlify dev",
+        "netlify:build": "netlify build",
+        "netlify:deploy": "netlify deploy",
+        "netlify:deploy:prod": "netlify deploy --prod",
+        "type-check": "tsc --noEmit",
+        "analyze": "ANALYZE=true next build"
     },
     "dependencies": {
         "@netlify/blobs": "^8.2.0",
+        "@netlify/functions": "^2.8.1",
+        "@sendgrid/mail": "^8.1.3",
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
+        "pg": "^8.11.3",
+        "xml2js": "^0.6.2",
+        "xmlbuilder2": "^3.1.1",
         "markdown-to-jsx": "^7.4.5",
         "next": "15.5.3",
         "react": "18.3.1",
         "react-dom": "18.3.1",
-        "unique-names-generator": "^4.7.1"
+        "react-hook-form": "^7.52.0",
+        "unique-names-generator": "^4.7.1",
+        "zod": "^3.23.0",
+        "jose": "^5.2.0",
+        "bcryptjs": "^2.4.3",
+        "clsx": "^2.1.0",
+        "tailwind-merge": "^2.3.0"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.0.15",
+        "@types/node": "^20.11.0",
+        "@types/pg": "^8.11.0",
+        "@types/bcryptjs": "^2.4.6",
+        "@types/react": "^18.3.0",
+        "@types/react-dom": "^18.3.0",
+        "@types/xml2js": "^0.4.14",
         "eslint": "8.57.1",
         "eslint-config-next": "15.5.3",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-accessibility": "^5.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "@testing-library/react": "^14.3.0",
+        "@testing-library/jest-dom": "^6.4.0",
+        "@testing-library/user-event": "^14.5.0",
+        "@playwright/test": "^1.44.0",
         "postcss": "^8.4.36",
-        "tailwindcss": "^4.0.15"
+        "tailwindcss": "^4.0.15",
+        "typescript": "^5.4.0",
+        "prettier": "^3.2.0",
+        "prettier-plugin-tailwindcss": "^0.5.0",
+        "@next/bundle-analyzer": "^15.5.3",
+        "cross-env": "^7.0.3"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=8.0.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }
