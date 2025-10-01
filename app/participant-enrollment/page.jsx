@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Card } from 'components/card';
 import { Button } from 'components/ui/Button';
 import { ProgressBar } from 'components/ui/ProgressBar';
+import ProgressTooltip from 'components/ui/ProgressTooltip';
 
 export default function ParticipantEnrollmentPage() {
     const [formData, setFormData] = useState({
@@ -310,6 +311,22 @@ export default function ParticipantEnrollmentPage() {
                     <li>• You will receive confirmation within 2-3 business days</li>
                     <li>• Contact support if you need assistance: 919-855-3400</li>
                 </ul>
+                
+                <div className="mt-4 pt-4 border-t border-blue-200">
+                    <ProgressTooltip 
+                        content={`After enrollment, you'll receive:
+• Email confirmation with next steps
+• SMS updates on your application status
+• Notification when Care Advisor interview is scheduled
+• Progress updates via your preferred contact method
+
+All communications are secure and HIPAA compliant.`}
+                    >
+                        <span className="text-blue-600 hover:text-blue-800 cursor-help underline">
+                            What should I expect after enrollment?
+                        </span>
+                    </ProgressTooltip>
+                </div>
             </div>
         </div>
     );

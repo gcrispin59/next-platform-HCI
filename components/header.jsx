@@ -6,6 +6,7 @@ const workflowPersonas = [
         title: 'Healthcare Providers',
         items: [
             { linkText: 'Participant Enrollment', href: '/participant-enrollment' },
+            { linkText: 'Care Advisor Interview', href: '/care-advisor-interview' },
             { linkText: 'Care Plans', href: '/care-plan' },
             { linkText: 'FMS Authorization', href: '/fms-authorization' },
             { linkText: 'All Forms', href: '/forms' }
