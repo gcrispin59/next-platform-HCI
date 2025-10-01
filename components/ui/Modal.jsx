@@ -41,10 +41,18 @@ export function Modal({
   };
   
   const modalContent = (
-    <div className="modal-overlay" onClick={onClose}>
+    <div 
+      className="modal-overlay" 
+      onClick={onClose}
+      onKeyDown={(e) => e.key === 'Escape' && onClose()}
+      role="button"
+      tabIndex="0"
+      aria-label="Close modal"
+    >
       <div 
         className={`modal-content ${sizeClasses[size]} ${className}`}
-        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
       >
         <div className="modal-header">
           <h2 className="modal-title">{title}</h2>
