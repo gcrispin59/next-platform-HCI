@@ -5,10 +5,10 @@ const workflowPersonas = [
     {
         title: 'Healthcare Providers',
         items: [
-            { linkText: 'Patient Forms', href: '/patient-forms' },
-            { linkText: 'Care Plans', href: '/care-plans' },
-            { linkText: 'Documentation', href: '/documentation' },
-            { linkText: 'Reports', href: '/reports' }
+            { linkText: 'Participant Enrollment', href: '/participant-enrollment' },
+            { linkText: 'Care Plans', href: '/care-plan' },
+            { linkText: 'FMS Authorization', href: '/fms-authorization' },
+            { linkText: 'All Forms', href: '/forms' }
         ]
     },
     {
@@ -16,7 +16,7 @@ const workflowPersonas = [
         items: [
             { linkText: 'Program Management', href: '/programs' },
             { linkText: 'Participant Tracking', href: '/participants' },
-            { linkText: 'Outreach Forms', href: '/outreach' },
+            { linkText: 'Quality Assurance', href: '/quality-assurance-audit' },
             { linkText: 'Community Resources', href: '/resources' }
         ]
     },
@@ -26,7 +26,7 @@ const workflowPersonas = [
             { linkText: 'System Management', href: '/admin' },
             { linkText: 'Analytics', href: '/analytics' },
             { linkText: 'User Management', href: '/users' },
-            { linkText: 'System Health', href: '/system' }
+            { linkText: 'Vendor Setup', href: '/vendor-setup' }
         ]
     }
 ];
